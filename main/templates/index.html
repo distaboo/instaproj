@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <form action="/start/" method="post">
+     {% csrf_token %}
+      <p><input  id="insid" type="text" name="insid" maxlength="100" placeholder="Введите instagram id"></p>
+      <p><input type="submit" value="СТАРТ"></p>
+ </form>
+ <form action="/stop/" method="post">
+     {% csrf_token %}
+      <p><input type="submit" value="СТОП"></p>
+ </form>
+    <p>{{ info }}</p>
+    <p>Всего подписок: {{ total }}</p>
+
+    <p>Прогресс: {{ var }}/{{ total }}</p>
+    <h3>Найдено адресов</h3>
+    <p>Из описаний: {{ countBioEmail }} <a href="/download/list.txt/" download>Скачать</a></p>
+    <p>Из кнопок: {{ countEmail }} <a href="/download/listButton.txt/" download>Скачать</a></p>
+
+</body>
+</html>
